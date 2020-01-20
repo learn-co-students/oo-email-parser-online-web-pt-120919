@@ -1,20 +1,15 @@
+
 class EmailAddressParser
+  attr_reader :emails
 
-email_addresses = "jane@doe.com, people@somewhere.org"
+  def initialize(emails)
+    @emails = emails
+  end
 
-def initialized
-  
-  
-  parser = EmailAdddressPareser.new
-
+  def parse
+    emails.split(/, | /).uniq
+  end
 end
-
-parser.parse
-
-end
-
-
-
 
 # Build a class EmailParser that accepts a string of unformatted 
 # emails. The parse method on the class should separate them into
